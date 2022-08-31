@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter_qr_reader/flutter_qr_reader.dart';
-
 void main() => runApp(MyApp());
 
 class MyApp extends StatefulWidget {
@@ -22,16 +20,13 @@ class _MyAppState extends State<MyApp> {
 }
 
 class HomePage extends StatefulWidget {
-  HomePage({Key key}) : super(key: key);
+  HomePage({Key? key}) : super(key: key);
 
   @override
   _HomePageState createState() => new _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
-  QrReaderViewController _controller;
-  bool isOk = false;
-  String data;
   @override
   void initState() {
     super.initState();
@@ -42,11 +37,5 @@ class _HomePageState extends State<HomePage> {
     return Scaffold();
   }
 
-  void onScan(String v, List<Offset> offsets) {
-    print([v, offsets]);
-    setState(() {
-      data = v;
-    });
-    _controller.stopCamera();
-  }
+  void onScan(String v, List<Offset> offsets) {}
 }
